@@ -65,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
       compressQuality: 100,
       maxWidth: 1080,
       maxHeight: 1080,
-
       compressFormat: ImageCompressFormat.jpg,
       uiSettings: [
         AndroidUiSettings(
@@ -75,10 +74,16 @@ class _HomeScreenState extends State<HomeScreen> {
           initAspectRatio: CropAspectRatioPreset.original,
           lockAspectRatio: false,
           backgroundColor: const Color(0xff657194),
-            activeControlsWidgetColor: const Color(0xff657194)
+          activeControlsWidgetColor: const Color(0xff657194),
         ),
         IOSUiSettings(
+          aspectRatioPickerButtonHidden:true,
           minimumAspectRatio: 1.0,
+          title: 'Crop Image',
+          aspectRatioPresets: [
+            CropAspectRatioPreset.original,
+            CropAspectRatioPreset.square,
+          ],
         ),
       ],
     );
@@ -103,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 30,right: 30,top: 20),
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
               child: Consumer<FileModel>(
                 builder: (context, fileModel, child) {
                   if (fileModel.selectedImage != null) {
