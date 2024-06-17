@@ -65,14 +65,17 @@ class _HomeScreenState extends State<HomeScreen> {
       compressQuality: 100,
       maxWidth: 1080,
       maxHeight: 1080,
+
       compressFormat: ImageCompressFormat.jpg,
       uiSettings: [
         AndroidUiSettings(
           toolbarTitle: 'Crop Image',
-          toolbarColor: Colors.deepOrange,
-          toolbarWidgetColor: Colors.white,
+          toolbarColor: const Color(0xff657194),
+          toolbarWidgetColor: const Color(0xffE9FBFF),
           initAspectRatio: CropAspectRatioPreset.original,
           lockAspectRatio: false,
+          backgroundColor: const Color(0xff657194),
+            activeControlsWidgetColor: const Color(0xff657194)
         ),
         IOSUiSettings(
           minimumAspectRatio: 1.0,
